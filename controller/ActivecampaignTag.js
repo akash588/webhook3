@@ -5,10 +5,14 @@ async function ACtags (status, contactId)  {
     var tag = "";
    console.log("status>>>>>>>>",status)
    if(status == "invalid"){
-       tag = "6"
+       tag = "11"
    }
    else if(status == "valid"){
-    tag = "5"
+    tag = "10"
+}else if(status == "accept_all"){
+  tag = "7"
+}else if(status == "unknown"){
+  tag = "8"
 }else{
     return;
 }
