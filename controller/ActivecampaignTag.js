@@ -1,5 +1,6 @@
 
 const axios = require('axios');
+const updateContact = require('./updatecontact')
 
 async function ACtags (status, contactId)  {  
     var tag = "";
@@ -36,8 +37,9 @@ async function ACtags (status, contactId)  {
       };
       
       axios(config)
-      .then(function (response) {
+      .then( async function (response) {
         console.log(JSON.stringify(response.data));
+        await updateContact(contactId, status)
       })
       .catch(function (error) {
         console.log(error);
